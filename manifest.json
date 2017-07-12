@@ -1,0 +1,27 @@
+{
+  "name": "PQT2",
+  "version": "1.0",
+  "manifest_version": 2,
+  "content_scripts": [{
+      "matches": ["https://ngc-pro-oca-internal.houston.hp.com/oca/OCAInternalLogin/*"],
+      "js": ["oca_contentscript.js"],
+      "run_at": "document_end"
+  },{
+      "matches": ["http://127.0.0.1:31999/pqt2/index.html*"],
+      "js": ["pqt_contentscript.js"],
+      "run_at": "document_end"
+  }],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "web_accessible_resources": ["oca_payload.js","pqt_payload.js"],
+  "permissions": [
+    "tabs"
+  ],
+  "icons": {
+    "16": "logo-16.png",
+    "48": "logo-48.png",
+    "128": "logo-128.png"
+  }
+}
